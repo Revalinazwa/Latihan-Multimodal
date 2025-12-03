@@ -2,13 +2,7 @@
 
 Sistem end-to-end untuk Image-Text Retrieval menggunakan shared embedding space (mirip CLIP).
 
-## 📋 Requirements
-
-- Python 3.8+
-- CUDA-capable GPU (recommended)
-- ~8GB VRAM untuk training
-
-## 🚀 Quick Start
+## Quick Start
 
 ### 1. Install Dependencies
 
