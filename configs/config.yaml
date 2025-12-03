@@ -1,0 +1,46 @@
+# Dataset
+dataset:
+  name: "flickr8k"
+  data_dir: "./data"
+  image_dir: "./data/Images"
+  captions_file: "./data/captions.txt"
+  train_split: 0.7
+  val_split: 0.15
+  test_split: 0.15
+  max_samples: 1000  # Untuk sampling jika perlu
+
+# Model
+model:
+  image_encoder: "resnet50"  # resnet50, resnet101, efficientnet_b0
+  text_encoder: "distilbert-base-uncased"
+  embedding_dim: 512
+  temperature: 0.07
+  freeze_image_encoder: false
+  freeze_text_encoder: false
+
+# Training
+training:
+  batch_size: 64
+  num_epochs: 10
+  learning_rate: 0.0001
+  weight_decay: 0.0001
+  optimizer: "adam"  # adam, adamw, sgd
+  scheduler: "cosine"  # cosine, step, plateau
+  warmup_epochs: 2
+  gradient_clip: 1.0
+  
+# Evaluation
+evaluation:
+  recall_k: [1, 5, 10]
+  batch_size: 128
+
+# Paths
+paths:
+  checkpoint_dir: "./checkpoints"
+  logs_dir: "./logs"
+  results_dir: "./results"
+
+# Hardware
+device: "cuda"  # cuda, cpu
+num_workers: 4
+pin_memory: true
